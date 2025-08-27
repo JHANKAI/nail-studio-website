@@ -1,0 +1,688 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+@font-face{
+    font-family: NotoSansTC;
+    src:url(./fonts/NotoSansTC-VariableFont_wght.ttf)
+}
+
+
+body{
+    font-family: NotoSansTC;
+}
+
+header{
+    background-color: rgba(225, 218, 189,0.8);
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    z-index: 4; /* 增加 z-index，確保 header 在最上層 */
+}
+
+.box{
+    height: 80px;
+}
+
+.box2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+
+}
+
+.box3 {
+  display: flex;
+  align-items: flex-start; 
+  justify-content: center;
+  /* padding: 10px; */
+  flex-wrap: wrap;
+  max-height: 75vh;
+  gap: 30px;
+  overflow-y: auto;
+}
+
+
+/* ============ 以下設定 gallery 區塊 ============ */
+.card_gallery{
+  box-sizing: border-box;
+  border: 3px solid;
+  border-color: #0d0c22;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+  width: 15vw;
+  height: 30vh;
+  padding: 2px;
+  line-height: 1;
+}
+
+.card_gallery img {
+  width: 100%;
+  height: 83%;      /* 固定高度，可調整 */
+  object-fit: contain;
+  background-color: #f0f0f0; /* 背景色，用於填充空白 */
+  border-radius: 8px; /* 可選：圓角 */
+
+}
+
+.card_gallery button {
+display: block;
+margin: 0 auto;
+}
+
+/* ============ 以下設定 gallery_for_customer 區塊 ============ */
+.card_gallery_for_customer{
+  box-sizing: border-box;
+  border: 3px solid;
+  border-color: #0d0c22;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+  width: 15vw;
+  height: 30vh;
+  padding: 2px;
+  line-height: 1;
+}
+
+.card_gallery_for_customer img {
+  width: 100%;
+  height:100%;      /* 固定高度，可調整 */
+  object-fit: contain;
+  background-color: #f0f0f0; /* 背景色，用於填充空白 */
+  border-radius: 8px; /* 可選：圓角 */
+
+}
+
+/* ============ 以下設定 header 區塊 ============ */
+
+h1{
+    position: absolute;
+    color: white;
+    left: 50px;
+    top:0;
+    line-height: 80px;
+}
+
+header ul{
+    position: absolute;
+    right:1vw;
+    top:0;
+    line-height: 80px;
+}
+
+header li{
+    position: relative;  
+    display: inline-block;
+    width: 100px;
+    margin-right: 2vw;
+}
+
+header a{
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+}
+
+header a:hover{
+    text-decoration: underline;
+}
+
+header li ul{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left:0;
+    width: 100%;
+    z-index: 100; /* 用來控制HTML元素的堆疊順序，大的先顯示 */
+    background-color: #E1DABD;
+}
+
+header li:hover ul{
+    display: block;
+}
+
+
+/* ============ 以下設定 main 區塊 ============ */
+
+.news{
+    background-color: #BCD0C7;
+    color: white;
+    height: 95vh;
+    background-image: url(./images/nail_studio.jpg) ;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.news h2{
+    font-size: 60px;
+}
+
+
+.news p{
+    color: #FEF7E6;
+    font-size: 18px;
+    margin: 25px 0;  /* 上下25px 左右0px */
+}
+
+.shop{
+    display:flex;
+}
+
+.shop img{
+    width: 50%; 
+}
+
+.info{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.info h2{
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.info p{
+    font-size: 14px;
+    line-height: 2em;
+    text-align: center;
+}
+
+.index_main{
+  padding: 0;
+}
+
+
+/* ============ 以下設定 footer 區塊 ============ */
+footer{
+    background-color: #BCD0C7;
+    color: #FFFFFF;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+/* ============ 設定 sticky footer ============ */
+html, body {
+    height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+main {
+    padding: 20px;
+    flex: 1;
+}
+
+/* ============ 以下設定 form 區塊 ============ */
+
+
+
+
+.form-container{
+    width: 50%;
+    border:1px #ccc solid;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 30px auto;
+}
+
+.form-container h2{
+    margin-bottom: 10px;
+}
+
+.form-container p{
+    margin-bottom: 10px;
+}
+
+.option-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.option-item {
+    width: 20%;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    transition: transform 0.3s;
+}
+
+.option-item input[type="radio"] {
+    transform: scale(0.3);
+}
+
+
+.option-item:hover{
+	transform:scale(1.05);
+	border-color: #3399cc;
+}
+
+.option-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+textarea{
+    width: 95%;
+    margin-top: 20px;
+}
+
+.textarea_2 {
+
+  width: 350px; /* 你想要的寬度 */
+  height: 80px; /* 你想要的高度 */
+}
+
+
+
+/* ============ 以下設定 response 區塊 ============ */
+.response_container {
+    background-color: #FEF7E6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  /* 讓 body 填滿視窗高度 */
+}
+
+
+.response{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    border: 3px #7c7a7a solid;
+    border-radius: 15px;
+    color:black;
+    font-size: 18px;
+    height: 330px;
+}
+
+
+
+/* ============ 以下設定 使用者輸入 區塊 ============ */
+
+.input_data{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    width: 20vw;
+    border: #ccc 2px solid;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.input_data_1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+    width: 20vw;
+    border: #ccc 2px solid;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.input_data_2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    width: 30vw;
+    border: #ccc 2px solid;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.input_data p{
+    display: inline;
+}
+
+.input_data a{
+    color: #7c7a7a;
+    text-decoration: none;
+}
+
+.input_data a:visited{
+    color: #2f5bb9;
+}
+
+.input_data a:hover{
+    text-decoration: underline;
+}
+
+.input_data input{
+    width: 250px;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+/* ============ 以下設定 button 區塊 ============ */
+button {
+  width: fit-content;
+  min-width: 100px;
+  height: 45px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 2.5px solid #E0E1E4;
+  box-shadow: 0px 0px 20px -20px;
+  cursor: pointer;
+  background-color: white;
+  transition: all 0.2s ease-in-out 0ms;
+  user-select: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+button:hover {
+  background-color: #F2F2F2;
+  box-shadow: 0px 0px 20px -18px;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+
+/* ============ 以下設定 table 區塊 ============ */
+
+.table-container {
+    max-height: 80vh; /* 設定最大高度 */
+    width: 120vh; 
+    overflow-y: auto; /* 垂直捲軸 */
+    overflow-x: auto; /* 水平捲軸（如果需要） */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card {
+    width: 100%; /* 改為100%以適應容器 */
+    background: #BCD0C7;
+    font-family: "Courier New", Courier, monospace;
+    border-radius: 5px;
+    overflow: visible;
+    margin: 0; /* 移除margin */
+}
+
+
+.card thead {
+    position: sticky;
+    top: 0;
+    background: #BCD0C7;
+}
+
+.card__title {
+    color: white;
+    font-weight: bold;
+    padding: 12px 10px; /* 增加padding */
+    border-bottom: 1px solid rgb(167, 159, 159);
+    font-size: 0.95rem;
+}
+
+.card th, .card td {
+    padding: 12px; /* 增加padding */
+    text-align: left;
+    vertical-align: middle;
+    white-space: nowrap; 
+    border-bottom: 1px solid #eee; /* 添加分隔線 */
+}
+
+.item {
+    background-color: white;
+    transition: background-color 0.2s ease; /* 添加過渡效果 */
+}
+
+.item:nth-child(even) {
+    background: rgb(234, 235, 234);
+}
+
+.item:hover {
+    background-color: #f0f8ff; /* 添加hover效果 */
+}
+
+
+/* ============ 以下設定 search 區塊 ============ */
+
+.group {
+  display: flex;
+  line-height: 28px;
+  align-items: center;
+  position: relative;
+  max-width: 190px;
+}
+
+input {
+  width: 100%;
+  height: 40px;
+  line-height: 28px;
+  padding: 0 1rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f3f3f4;
+  color: #0d0c22;
+  transition: 0.3s ease;
+}
+
+.input_1 {
+  width: 40%;
+  height: 40px;
+  line-height: 28px;
+  padding: 0 1rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f3f3f4;
+  color: #0d0c22;
+  transition: 0.3s ease;
+}
+
+
+.input_2 {
+  width: 10%;
+  height: 40px;
+  line-height: 28px;
+  padding: 0 1rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f3f3f4;
+  color: #0d0c22;
+  transition: 0.3s ease;
+}
+
+
+.input_3 {
+  width: 60%;
+  height: 40px;
+  line-height: 28px;
+  padding: 0 1rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f3f3f4;
+  color: #0d0c22;
+  transition: 0.3s ease;
+}
+
+.input_4 {
+  width: 80%;
+  height: 40px;
+  line-height: 28px;
+  padding: 0 1rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f3f3f4;
+  color: #0d0c22;
+  transition: 0.3s ease;
+}
+
+input::placeholder {
+  color: #9e9ea7;
+}
+
+input:focus,
+input:hover {
+  outline: none;
+  border-color: rgba(0, 48, 73, 0.4);
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgb(0 48 73 / 10%);
+}
+
+/* icon {
+  position: absolute;
+  left: 1rem;
+  fill: #9e9ea7;
+  width: 1rem;
+  height: 1rem;
+} */
+
+
+/* ============ 以下設定 隱藏 區塊 ============ */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ============ 以下設定 radio 區塊 ============ */
+.radio-inputs {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 0.5rem;
+  background-color: #EEE;
+  box-sizing: border-box;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+  padding: 0.25rem;
+  width: 300px;
+  font-size: 14px;
+}
+
+.radio-inputs .radio {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.radio-inputs .radio input {
+  display: none;
+}
+
+.radio-inputs .radio .name {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: none;
+  padding: .5rem 0;
+  color: rgba(51, 65, 85, 1);
+  transition: all .15s ease-in-out;
+}
+
+.radio-inputs .radio input:checked + .name {
+  background-color: #fff;
+  font-weight: 600;
+}
+
+/* ============ 以下設定 select 區塊 ============ */
+select {
+  width: 180px;
+  height: 45px;
+  line-height: 28px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f3f3f4;
+  color: #0d0c22;
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+select::placeholder {
+  color: #9e9ea7;
+}
+
+select:focus,
+select:hover {
+  outline: none;
+  border-color: rgba(0, 48, 73, 0.4);
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgb(0 48 73 / 10%);
+}
+
+
+/* ============ 以下設定 彈跳視窗 區塊 ============ */
+.my-popup-class {
+  border-radius: 15px !important;
+  font-family: 'Arial', sans-serif !important;
+  box-shadow: 0 0 20px rgba(150, 150, 150, 0.3) !important; /* 淡灰色陰影 */
+  background-color: #f5f5f5 !important; /* 非常淺的灰色背景 */
+  color: #4a4a4a !important; /* 中深灰字體 */
+}
+
+.my-title-class {
+  color: #6e6e6e !important; /* 中灰標題 */
+  font-size: 28px !important;
+  font-weight: bold !important;
+}
+
+.my-confirm-button {
+  background-color: #a0a0a0 !important; /* 中灰按鈕 */
+  font-size: 18px !important;
+  border: none !important;
+  border-radius: 10px !important;
+  padding: 10px 30px !important;
+  color: #fff !important; /* 按鈕字白 */
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.my-confirm-button:hover {
+  background-color: #c0c0c0 !important; /* 按鈕hover變淺灰 */
+}
